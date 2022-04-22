@@ -47,53 +47,53 @@ Layihə GitHub-da ayrıca repozitoriyada olmalıdır.
 Şərt
 
 
-Layihə faylını yükləyərkən ekranda istifadəçi interfeysinin lazımi elementlərini nəzərdən keçiririk. İdarəetmə vasitələri düzgün default qiymətlərə malikdir. 
+1- Layihə faylını yükləyərkən ekranda istifadəçi interfeysinin lazımi elementlərini nəzərdən keçiririk. İdarəetmə vasitələri düzgün default qiymətlərə malikdir. 
 
 
 
-Default olaraq iki valyuta seçilmişdir: RUB və USD.
+2- Default olaraq iki valyuta seçilmişdir: RUB və USD.
 
 
 
-Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
+3-Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
 
-Sağda USD valyutasını təyin edir, düzgün valyuta dəyəri rublun cari məzənnəsinə uyğun yenidən hesablanır.
+4-Sağda USD valyutasını təyin edir, düzgün valyuta dəyəri rublun cari məzənnəsinə uyğun yenidən hesablanır.
 
-Soldakı valyutanı EUR-ya dəyişdirilir.
+5-Soldakı valyutanı EUR-ya dəyişdirilir.
 
-Sağ inputun dəyəri cari EUR/USD məzənnəsi ilə yenidən hesablanır.
+6- Sağ inputun dəyəri cari EUR/USD məzənnəsi ilə yenidən hesablanır.
 
 
-Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
+7- Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
 
-Sağda isə USD valyutasını təyin edirik.
+8- Sağda isə USD valyutasını təyin edirik.
 
-Sağdakı valyutanı EUR-ya dəyişirik.
+9- Sağdakı valyutanı EUR-ya dəyişirik.
 
-Sağ inputun dəyəri cari RUB/EUR məzənnəsinə uyğun yenidən hesablanır.
+10- Sağ inputun dəyəri cari RUB/EUR məzənnəsinə uyğun yenidən hesablanır.
    
    
-Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
+11- Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
 
-Sağda isə USD valyutasını təyin edirik, düzgün valyuta dəyəri rublun cari məzənnəsinə uyğun yenidən hesablanır.
-
-
-Sağ inputun dəyəri cari məzənnə ilə yenidən hesablanır və iki dəfə böyük olur.
+12- Sağda isə USD valyutasını təyin edirik, düzgün valyuta dəyəri rublun cari məzənnəsinə uyğun yenidən hesablanır.
 
 
-
-Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
-
-Sağda isə USD valyutasını təyin edirik, düzgün valyuta dəyəri rublun cari məzənnəsinə uyğun yenidən hesablanır.
-
-Sağ inputun dəyərini 100-ə dəyişdiririk.
-
-Sol inputun dəyəri cari məzənnə ilə yenidən hesablanır.
+13- Sağ inputun dəyəri cari məzənnə ilə yenidən hesablanır və iki dəfə böyük olur.
 
 
-Chrome brauzerində developer alətlərini açın. Network tabına keçin, Throttling sahəsini tapın (Default olaraq Onlayn təyin olunmuşdur) və onu Oflayn seçin. 
 
-Sahələrdən birinin dəyərini dəyişdirin. İstifadəçiyə nəyinsə səhv getdiyi barədə mesaj göstərildi.
+14- Solda RUB valyutası və məbləğ olaraq 100 dəyərini təyin edin.
+
+15- Sağda isə USD valyutasını təyin edirik, düzgün valyuta dəyəri rublun cari məzənnəsinə uyğun yenidən hesablanır.
+
+16- Sağ inputun dəyərini 100-ə dəyişdiririk.
+
+17- Sol inputun dəyəri cari məzənnə ilə yenidən hesablanır.
+
+
+18- Chrome brauzerində developer alətlərini açın. Network tabına keçin, Throttling sahəsini tapın (Default olaraq Onlayn təyin olunmuşdur) və onu Oflayn seçin. 
+
+19- Sahələrdən birinin dəyərini dəyişdirin. İstifadəçiyə nəyinsə səhv getdiyi barədə mesaj göstərildi.
 
 
 
