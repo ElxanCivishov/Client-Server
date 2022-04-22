@@ -1,1 +1,32 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+}
+.navbar{
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
+}
+.left-nav{
+  max-width: 89px;
+  height: 23px;
+
+}
+.list-nav{
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+}
+.list-nav li{
+padding-top: 15px;
+    margin-right: 13px;
+}
