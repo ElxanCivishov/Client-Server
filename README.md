@@ -1,6 +1,19 @@
 # M3_Client-Server
 
+
+
+
+
 Modul 3. "Valyuta konvertoru tərtibatı" layihəsi
+
+.................................................................................
+
+Layihənin  son versiyasının Replit linki    
+
+https://Client-Server.elxancivishov.repl.co
+
+.................................................................................
+
 Açıq API-dən aktual məlumatları əldə edərək onlayn valyuta çeviricisi tərtib etmək:
 https://exchangerate.host/#/#docs 
 Valyuta məzənnəsi haqqında məlumat əldə etmək üçün URL-ə bu valyutaların iki abreviaturasını əlavə edərək (boşluq və ayırıcılar olmadan) valyuta cütü haqqında məlumat sorğulamaq lazımdır.
