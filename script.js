@@ -47,13 +47,6 @@ function ulMouseOut(event) {
 
 function selectedValyuta(event) {
   if (event.target.tagName === "LI") {
-    // }else if (
-    //   event.target.parentElement.id === "right-list" &&
-    //   inputRight.value !== ""
-    // ) {
-    //   getConvertRightValue();
-    // }
-
     ul.forEach((item) => {
       item.removeEventListener("mouseout", ulMouseOut);
       for (let i = 0; i < item.childElementCount; i++) {
