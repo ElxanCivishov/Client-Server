@@ -1,6 +1,8 @@
 const ul = document.querySelectorAll(".valyuta-text");
 const inputLeft = document.querySelector("#convertLeftValue");
 const inputRight = document.querySelector("#convertRightValue");
+const leftAmountChange = document.querySelector("#leftAmountChange");
+const rightAmountChange = document.querySelector("#rightAmountChange");
 ul.forEach((item) => {
   item.addEventListener("mouseover", ulMouseOver);
   item.addEventListener("click", selectedValyuta);
@@ -57,10 +59,61 @@ function selectedValyuta(event) {
     } else if (event.target.parentElement.id === "right-list") {
       rightValyutaName = event.target.textContent;
     }
+    getRightAmountChange();
+    getLeftAmountChange();
   }
+}
+function getLeftAmountChange() {
+  fetch(
+    `https://api.exchangerate.host/latest?base=${leftValyutaName}&symbols=${rightValyutaName}&amount=${1}`
+  )
+    .then((res) => res.json())
+    .then((d) => {
+      switch (rightValyutaName) {
+        case "USD":
+          leftAmountChange.innerHTML = `1 ${leftValyutaName} = ${d.rates.USD} USD`;
+          break;
+        case "RUB":
+          leftAmountChange.innerHTML = `1 ${leftValyutaName} = ${d.rates.RUB} RUB`;
+          break;
+        case "EUR":
+          leftAmountChange.innerHTML = `1 ${leftValyutaName} = ${d.rates.EUR} EUR`;
+          break;
+        case "GBP":
+          leftAmountChange.innerHTML = `1 ${leftValyutaName} = ${d.rates.GBP} GPB`;
+          break;
+        default:
+          break;
+      }
+    });
+}
+function getRightAmountChange() {
+  fetch(
+    `https://api.exchangerate.host/latest?base=${rightValyutaName}&symbols=${leftValyutaName}&amount=${1}`
+  )
+    .then((res) => res.json())
+    .then((d) => {
+      switch (leftValyutaName) {
+        case "USD":
+          rightAmountChange.innerHTML = `1 ${rightValyutaName} = ${d.rates.USD} USD`;
+          break;
+        case "RUB":
+          rightAmountChange.innerHTML = `1 ${rightValyutaName} = ${d.rates.RUB} RUB`;
+          break;
+        case "EUR":
+          rightAmountChange.innerHTML = `1 ${rightValyutaName} = ${d.rates.EUR} EUR`;
+          break;
+        case "GBP":
+          rightAmountChange.innerHTML = `1 ${rightValyutaName} = ${d.rates.GBP} GPB`;
+          break;
+        default:
+          break;
+      }
+    });
 }
 
 inputLeft.addEventListener("keyup", getConvertLeftValue);
+
 function getConvertLeftValue(event) {
   const data = fetch(
     `https://api.exchangerate.host/latest?base=${leftValyutaName}&symbols=${rightValyutaName}&amount=${event.target.value}`
