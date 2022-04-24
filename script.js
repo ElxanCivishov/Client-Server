@@ -47,6 +47,13 @@ function ulMouseOut(event) {
 
 function selectedValyuta(event) {
   if (event.target.tagName === "LI") {
+    // }else if (
+    //   event.target.parentElement.id === "right-list" &&
+    //   inputRight.value !== ""
+    // ) {
+    //   getConvertRightValue();
+    // }
+
     ul.forEach((item) => {
       item.removeEventListener("mouseout", ulMouseOut);
       for (let i = 0; i < item.childElementCount; i++) {
@@ -61,6 +68,18 @@ function selectedValyuta(event) {
     }
     getRightAmountChange();
     getLeftAmountChange();
+    if (
+      event.target.parentElement.id === "left-list" &&
+      inputLeft.value !== ""
+    ) {
+      leftValueFunc(inputLeft.value);
+    }
+    if (
+      event.target.parentElement.id === "right-list" &&
+      inputRight.value !== ""
+    ) {
+      rightValueFunc(inputRight.value);
+    }
   }
 }
 function getLeftAmountChange() {
@@ -114,9 +133,15 @@ function getRightAmountChange() {
 
 inputLeft.addEventListener("keyup", getConvertLeftValue);
 
-function getConvertLeftValue(event) {
+function getConvertLeftValue() {
+  let val = inputLeft.value;
+  leftValueFunc(val);
+}
+
+function leftValueFunc(input) {
+  console.log(input);
   const data = fetch(
-    `https://api.exchangerate.host/latest?base=${leftValyutaName}&symbols=${rightValyutaName}&amount=${event.target.value}`
+    `https://api.exchangerate.host/latest?base=${leftValyutaName}&symbols=${rightValyutaName}&amount=${input}`
   )
     .then((res) => res.json())
     .then((d) => {
@@ -138,11 +163,9 @@ function getConvertLeftValue(event) {
       }
     });
 }
-
-inputRight.addEventListener("keyup", getConvertRightValue);
-function getConvertRightValue(event) {
+function rightValueFunc(input) {
   const data = fetch(
-    `https://api.exchangerate.host/latest?base=${rightValyutaName}&symbols=${leftValyutaName}&amount=${event.target.value}`
+    `https://api.exchangerate.host/latest?base=${rightValyutaName}&symbols=${leftValyutaName}&amount=${input}`
   )
     .then((res) => res.json())
     .then((d) => {
@@ -159,9 +182,14 @@ function getConvertRightValue(event) {
         case "GBP":
           inputLeft.value = d.rates.GBP;
           break;
-
         default:
           break;
       }
     });
+}
+
+inputRight.addEventListener("keyup", getConvertRightValue);
+function getConvertRightValue() {
+  let val = inputRight.value;
+  rightValueFunc(val);
 }
