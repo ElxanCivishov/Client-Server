@@ -1,67 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Client Server</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="left-nav">
+        <img src="/images/nav-left.png" alt="" />
+      </div>
+      <div class="center-nav">
+        <ul class="center-nav-list">
+          <li id="business">Business</li>
+          <li class="list-item-header">Investition</li>
+          <li class="list-item-header">Insurance</li>
+          <li class="list-item-header">Mobile</li>
+          <li class="list-item-header">Jouney</li>
+          <li class="list-item-header">Trips</li>
+          <li class="list-item-header">Entertainment</li>
+        </ul>
+      </div>
+      <div class="right-nav">Login</div>
+    </div>
+    <!-- Container -->
     <div class="container">
-        <div class="navbar">
-            <div class="left-nav">
-                <img src="/images/nav-left.png" alt="">
+      <div class="header-text">Currency Converter Online</div>
+      <div class="item">
+        <div class="left-item">
+          <div class="item-header">I have</div>
+          <div class="valyuta">
+            <ul id="left-list" class="valyuta-text">
+              <li class="active-left">RUB</li>
+              <li>USD</li>
+              <li>EUR</li>
+              <li>GBP</li>
+            </ul>
+          </div>
+          <div class="item-value">
+            <input class="convert-value" type="number" id="convertLeftValue" />
+            <div id="leftAmountChange" class="convert-value-footer-text">
+              1 RUB = 0.012939 USD
             </div>
-            <div class="center-nav">
-                <ul class="list-nav">
-                <li id="business">Business</li>
-                <li class="list-item-header">Investition</li>
-                <li class="list-item-header">Insurance</li>
-                <li class="list-item-header">Mobile</li>
-                <li class="list-item-header">Jouney</li>
-                <li class="list-item-header">Trips</li>
-                <li class="list-item-header">Entertainment</li>
-                </ul>
-            </div>
-            <div class="right-nav">Login</div>
+          </div>
         </div>
-        <div class="header-text">CURRENCY CONVERTER ONLINE</div>
-        <div class="body">
-            <div class="item">
-                <div class="left-item">
-                    <div class="item-header-text"> I have</div>
-                    <div class="left-valyuta">
-                        <ul class="valyuta-text">
-                        <li class="active valyuta-text">RUB</li>
-                        <li class="valyuta-text">USD</li>
-                        <li class="valyuta-text">EUR</li>
-                       <li class="valyuta-text">GBP</li>
-                       </ul>
-              </div>
-              <div class="item-value"></div>
-              <div class="value"></div>
-              <div class="convert-value-text"></div>
-                </div>
-                <div class="right-item">
-                    <div class="item-header-text"></div>
-                    <div class="left-valyuta">
-                        <ul class="valyuta-text">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        </ul>
-                    </div>
-                    <div class="item-value"></div>
-                    <div class="value"></div>
-                    <div class="convert-value-text"></div>
-                </div>
+        <div class="right-item">
+          <div class="item-header">I want to buy</div>
+          <div class="valyuta">
+            <ul id="right-list" class="valyuta-text">
+              <li>RUB</li>
+              <li class="active-right">USD</li>
+              <li>EUR</li>
+              <li>GBP</li>
+            </ul>
+          </div>
+          <div class="item-value">
+            <input class="convert-value" type="number" id="convertRightValue" />
+            <div id="rightAmountChange" class="convert-value-footer-text">
+              1 USD = 77.283144 RUB
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
