@@ -3,12 +3,18 @@ const inputLeft = document.querySelector("#convertLeftValue");
 const inputRight = document.querySelector("#convertRightValue");
 const leftAmountChange = document.querySelector("#leftAmountChange");
 const rightAmountChange = document.querySelector("#rightAmountChange");
+
+let leftValyutaName = "RUB";
+let rightValyutaName = "USD";
+
 ul.forEach((item) => {
   item.addEventListener("mouseover", ulMouseOver);
   item.addEventListener("click", selectedValyuta);
 });
-let leftValyutaName = "RUB";
-let rightValyutaName = "USD";
+
+inputLeft.addEventListener("keyup", getConvertLeftValue);
+inputRight.addEventListener("keyup", getConvertRightValue);
+
 function activeMouseOver() {
   if (event.target.parentElement.id === "left-list") {
     ul[0].firstElementChild.style.background = "#833ae0";
@@ -24,6 +30,7 @@ function activeMouseOut() {
     ul[1].firstElementChild.nextElementSibling.style.background = "#833ae0";
   }
 }
+
 function ulMouseOver(event) {
   if (event.target.tagName === "LI") {
     event.target.style.background = "#833ae0";
@@ -34,6 +41,7 @@ function ulMouseOver(event) {
     });
   }
 }
+
 function ulMouseOut(event) {
   if (event.target.tagName === "LI") {
     event.target.style.background = "white";
@@ -75,6 +83,7 @@ function selectedValyuta(event) {
     }
   }
 }
+
 function getLeftAmountChange() {
   fetch(
     `https://api.exchangerate.host/latest?base=${leftValyutaName}&symbols=${rightValyutaName}&amount=${1}`
@@ -99,6 +108,7 @@ function getLeftAmountChange() {
       }
     });
 }
+
 function getRightAmountChange() {
   fetch(
     `https://api.exchangerate.host/latest?base=${rightValyutaName}&symbols=${leftValyutaName}&amount=${1}`
@@ -124,15 +134,12 @@ function getRightAmountChange() {
     });
 }
 
-inputLeft.addEventListener("keyup", getConvertLeftValue);
-
 function getConvertLeftValue() {
   let val = inputLeft.value;
   leftValueFunc(val);
 }
 
 function leftValueFunc(input) {
-  console.log(input);
   const data = fetch(
     `https://api.exchangerate.host/latest?base=${leftValyutaName}&symbols=${rightValyutaName}&amount=${input}`
   )
@@ -156,6 +163,12 @@ function leftValueFunc(input) {
       }
     });
 }
+
+function getConvertRightValue() {
+  let val = inputRight.value;
+  rightValueFunc(val);
+}
+
 function rightValueFunc(input) {
   const data = fetch(
     `https://api.exchangerate.host/latest?base=${rightValyutaName}&symbols=${leftValyutaName}&amount=${input}`
@@ -179,10 +192,4 @@ function rightValueFunc(input) {
           break;
       }
     });
-}
-
-inputRight.addEventListener("keyup", getConvertRightValue);
-function getConvertRightValue() {
-  let val = inputRight.value;
-  rightValueFunc(val);
 }
