@@ -1,3 +1,6 @@
+# Proje deployed in Netlify - https://change-valyuta.netlify.app/
+
+
 # M3_Client-Server
 
 
